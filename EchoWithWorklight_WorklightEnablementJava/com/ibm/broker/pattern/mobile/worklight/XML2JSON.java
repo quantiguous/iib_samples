@@ -36,7 +36,8 @@ public class XML2JSON extends MbJavaComputeNode {
 			Utility.unsetNameSpaces(jsonDataElement);
 			Utility.convertArrays(jsonDataElement);			
 
-			out.propagate(outAssembly);
+			// the propage needs to be outside the catch to ensure that exceptions get bubbled up correctly
+			// out.propagate(outAssembly);
 
 		} catch (Throwable e) {
 			// Example Exception handling	
@@ -44,6 +45,8 @@ public class XML2JSON extends MbJavaComputeNode {
 					"", e.toString(), null);
 			throw mbue;
 		}
+		
+		out.propagate(outAssembly);
 	}
 	
 	public void copyMessageHeaders(MbMessage inMessage, MbMessage outMessage)
