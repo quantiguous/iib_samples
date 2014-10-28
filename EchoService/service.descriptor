@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service:services xmlns:service="http://com.ibm.etools.mft.service">
+  <service:service implementation="gen/EchoService.msgflow" name="EchoService" portType="EchoService" wsdlFileName="EchoService.wsdl">
+    <service:operations>
+      <service:operation name="echo" type="request-response">
+        <service:flows>
+          <service:flow location="gen/echo_Request_Response.subflow" type="Request_Response"/>
+        </service:flows>
+      </service:operation>
+    </service:operations>
+    <service:errors>
+      <service:flows>
+        <service:flow location="gen/EchoServiceInputHTTPTimeoutHandler.subflow" type="Timeout"/>
+        <service:flow location="gen/EchoServiceInputFailureHandler.subflow" type="Failure"/>
+        <service:flow location="gen/EchoServiceInputCatchHandler.subflow" type="Catch"/>
+      </service:flows>
+    </service:errors>
+  </service:service>
+</service:services>
