@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE XML>
 <wl:adapter name="EchoWithWorklight"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xmlns:wl="http://www.worklight.com/integration"

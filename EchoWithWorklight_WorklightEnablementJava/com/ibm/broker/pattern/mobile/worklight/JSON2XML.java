@@ -21,6 +21,7 @@ public class JSON2XML extends MbJavaComputeNode {
 		Utility.initialize();
 	}
 	
+	@SuppressWarnings("unchecked")
 	public void evaluate(MbMessageAssembly inAssembly) throws MbException {
 		MbOutputTerminal out = getOutputTerminal("out");
 		
@@ -34,13 +35,13 @@ public class JSON2XML extends MbJavaComputeNode {
 
 		MbMessage localEnvironment = outAssembly.getLocalEnvironment();
 		MbElement localEnvironmentRoot = localEnvironment.getRootElement();
-		List xpathResult = (List)localEnvironmentRoot.evaluateXPath(requestURIXPath); 
+		List<MbElement> xpathResult = (List<MbElement>)localEnvironmentRoot.evaluateXPath(requestURIXPath); 
 		MbElement requestURIElement = (MbElement)xpathResult.get(0);
 		String requestURI  = requestURIElement .getValueAsString();
 		String httpBaseURL = Utility.getBaseURL();
 		String operationName = requestURI.substring(httpBaseURL.length());   
 		
-		xpathResult = (List)localEnvironmentRoot.evaluateXPath(destinationListXPath);
+		xpathResult = (List<MbElement>)localEnvironmentRoot.evaluateXPath(destinationListXPath);
 		MbElement destinationDataElement = (MbElement)xpathResult.get(0);
 		destinationDataElement.setValue(operationName);
 		

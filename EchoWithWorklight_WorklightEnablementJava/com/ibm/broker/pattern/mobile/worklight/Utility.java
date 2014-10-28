@@ -64,7 +64,8 @@ public class Utility {
 			
 			Object xPathResult = dataRoot.evaluateXPath(mbXPath);
 			if(null!=xPathResult){
-				List arrayList = (List)xPathResult;
+				@SuppressWarnings("unchecked")
+				List<MbElement> arrayList = (List<MbElement>)xPathResult;
 				if(arrayList.size()>0){
 					int index=0;
 					MbElement nextElement = (MbElement) arrayList.get(index);
@@ -99,6 +100,7 @@ public class Utility {
 			
 	private static void unsetNameSpacesInner(MbElement element) throws MbException {
 			element.setNamespace(""); 
+			@SuppressWarnings("unchecked")
 			List<MbElement> namespaceDeclarations = (List<MbElement>)element.evaluateXPath(namespaceDeclarationXPath);
 			for(MbElement nextElement : namespaceDeclarations ){
 				nextElement.delete();
