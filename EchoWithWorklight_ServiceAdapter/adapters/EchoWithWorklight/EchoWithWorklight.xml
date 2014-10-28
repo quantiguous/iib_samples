@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wl:adapter name="EchoWithWorklight"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:wl="http://www.worklight.com/integration"
+	xmlns:http="http://www.worklight.com/integration/http">
+
+	<displayName>EchoWithWorklight</displayName>
+	<description>Message Broker service adapter</description>
+	<connectivity>
+		<connectionPolicy xsi:type="http:HTTPConnectionPolicyType">
+			<protocol>http</protocol>
+			<domain>localhost</domain>
+			<port>7080</port>			
+		</connectionPolicy>
+		<loadConstraints maxConcurrentConnectionsPerNode="99" />
+	</connectivity>
+
+    <procedure name="echo" audit="true"/>
+
+</wl:adapter>

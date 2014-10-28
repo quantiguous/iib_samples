@@ -3,6 +3,7 @@
 	<name>EchoService</name>
 	<comment></comment>
 	<projects>
+		<project>EchoWithWorklight_WorklightEnablementJava</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
@@ -90,5 +91,6 @@
 		<nature>com.ibm.etools.msgbroker.tooling.serviceApplicationNature</nature>
 		<nature>com.ibm.etools.msgbroker.tooling.messageBrokerProjectNature</nature>
 		<nature>com.ibm.etools.msgbroker.tooling.applicationNature</nature>
+		<nature>com.ibm.etools.mft.pattern.support.PatternCustomProjectNature</nature>
 	</natures>
 </projectDescription>

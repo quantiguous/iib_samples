@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>EchoWithWorklight</name>
+	<comment></comment>
+	<projects>
+		<project>EchoService</project>
+		<project>EchoWithWorklight_WorklightEnablementJava</project>
+		<project>EchoWithWorklight_ServiceAdapter</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.ibm.etools.patterns.PatternInstanceBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.ibm.etools.patterns.PatternInstanceNature</nature>
+	</natures>
+</projectDescription>
