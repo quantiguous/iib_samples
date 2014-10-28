@@ -5,7 +5,7 @@ DECLARE ns NAMESPACE 'http://EchoService';
 CREATE COMPUTE MODULE echo_Request_Response_Compute
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
-		SET OutputRoot.XMLNSC.ns:echoResponse.output = 	InputRoot.XMLNSC.ns:echo.input;
+		SET OutputRoot.XMLNSC.ns:echoResponse.output = 	InputRoot.XMLNSC.*:echo.input;
 		RETURN TRUE;
 	END;
 END MODULE;
