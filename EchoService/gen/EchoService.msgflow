@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmLabel.msgnode="ComIbmLabel.msgnode" xmlns:ComIbmRouteToLabel.msgnode="ComIbmRouteToLabel.msgnode" xmlns:ComIbmSOAPInput.msgnode="ComIbmSOAPInput.msgnode" xmlns:ComIbmSOAPReply.msgnode="ComIbmSOAPReply.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:gen_EchoServiceInputCatchHandler.subflow="gen/EchoServiceInputCatchHandler.subflow" xmlns:gen_EchoServiceInputFailureHandler.subflow="gen/EchoServiceInputFailureHandler.subflow" xmlns:gen_EchoServiceInputHTTPTimeoutHandler.subflow="gen/EchoServiceInputHTTPTimeoutHandler.subflow" xmlns:gen_echo_Request_Response.subflow="gen/echo_Request_Response.subflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="gen/EchoService.msgflow" nsPrefix="gen_EchoService.msgflow">
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmLabel.msgnode="ComIbmLabel.msgnode" xmlns:ComIbmRouteToLabel.msgnode="ComIbmRouteToLabel.msgnode" xmlns:ComIbmSOAPInput.msgnode="ComIbmSOAPInput.msgnode" xmlns:ComIbmSOAPReply.msgnode="ComIbmSOAPReply.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:gen_EchoServiceInputCatchHandler.subflow="gen/EchoServiceInputCatchHandler.subflow" xmlns:gen_EchoServiceInputFailureHandler.subflow="gen/EchoServiceInputFailureHandler.subflow"
+    xmlns:gen_EchoServiceInputHTTPTimeoutHandler.subflow="gen/EchoServiceInputHTTPTimeoutHandler.subflow" xmlns:gen_echo_Request_Response.subflow="gen/echo_Request_Response.subflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="gen/EchoService.msgflow"
+    nsPrefix="gen_EchoService.msgflow">
   <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
     <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
     <translation xmi:type="utility:TranslatableString" key="EchoService" bundleName="gen/EchoService" pluginId="EchoService"/>
-    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/EchoService/icons/full/obj16/null"/>
-    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/EchoService/icons/full/obj30/null"/>
+    <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/EchoService/icons/full/obj16/EchoService.gif"/>
+    <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/EchoService/icons/full/obj30/EchoService.gif"/>
     <composition>
       <nodes xmi:type="ComIbmSOAPInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="20,20" wsdlFileName="EchoService.wsdl" selectedPortType="EchoService" selectedBinding="EchoServiceHttpBinding" selectedPort="EchoServiceHttpPort" targetNamespace="http://EchoService" useHTTPTransport="true" urlSelector="/EchoService/EchoService" allowQueryWSDL="true" extractSOAPBody="true">
         <translation xmi:type="utility:ConstantString" string="SOAP Input"/>
       </nodes>
-      <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="220,150">
+      <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="27,186">
         <translation xmi:type="utility:ConstantString" string="Route To Label"/>
       </nodes>
-      <nodes xmi:type="ComIbmSOAPReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="830,140">
+      <nodes xmi:type="ComIbmSOAPReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="736,226">
         <translation xmi:type="utility:ConstantString" string="SOAP Reply"/>
       </nodes>
       <nodes xmi:type="gen_EchoServiceInputFailureHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_4" location="635,8">
@@ -21,13 +24,13 @@
       <nodes xmi:type="gen_EchoServiceInputHTTPTimeoutHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_5" location="515,98">
         <translation xmi:type="utility:ConstantString" string="EchoServiceInputHTTPTimeoutHandler"/>
       </nodes>
-      <nodes xmi:type="gen_EchoServiceInputCatchHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_6" location="455,143">
+      <nodes xmi:type="gen_EchoServiceInputCatchHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_6" location="231,66">
         <translation xmi:type="utility:ConstantString" string="EchoServiceInputCatchHandler"/>
       </nodes>
-      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="220,230" labelName="echo">
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="134,260" labelName="echo">
         <translation xmi:type="utility:ConstantString" string="echo"/>
       </nodes>
-      <nodes xmi:type="gen_echo_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_8" location="370,230">
+      <nodes xmi:type="gen_echo_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_8" location="305,252">
         <translation xmi:type="utility:ConstantString" string="echo_Request_Response"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
@@ -41,5 +44,6 @@
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_9" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_8" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
     </composition>
     <propertyOrganizer/>
+    <stickyBoard/>
   </eClassifiers>
 </ecore:EPackage>

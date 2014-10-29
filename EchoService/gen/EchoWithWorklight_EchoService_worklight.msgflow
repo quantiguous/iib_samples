@@ -9,43 +9,43 @@
     <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/EchoService/icons/full/obj16/EchoWithWorklight_EchoService_worklight.gif"/>
     <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/EchoService/icons/full/obj30/EchoWithWorklight_EchoService_worklight.gif"/>
     <composition>
-      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="200,100" URLSpecifier="/Worklight/EchoWithWorklight/*" setDestinationList="true" messageDomainProperty="JSON">
+      <nodes xmi:type="ComIbmWSInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="55,81" URLSpecifier="/Worklight/EchoWithWorklight/*" setDestinationList="true" messageDomainProperty="JSON">
         <translation xmi:type="utility:ConstantString" string="HTTP Input"/>
       </nodes>
-      <nodes xmi:type="ComIbmJavaCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="300,100" javaClass="com.ibm.broker.pattern.mobile.worklight.JSON2XML">
+      <nodes xmi:type="ComIbmJavaCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="223,24" javaClass="com.ibm.broker.pattern.mobile.worklight.JSON2XML">
         <translation xmi:type="utility:ConstantString" string="JSON2XML"/>
       </nodes>
-      <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="400,100">
+      <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="401,7">
         <translation xmi:type="utility:ConstantString" string="Route To Label"/>
       </nodes>
       <nodes xmi:type="ComIbmJavaCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="606,379" javaClass="com.ibm.broker.pattern.mobile.worklight.XML2JSON">
         <translation xmi:type="utility:ConstantString" string="XML2JSON"/>
       </nodes>
-      <nodes xmi:type="ComIbmWSReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_5" location="882,298">
+      <nodes xmi:type="ComIbmWSReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_5" location="778,215">
         <translation xmi:type="utility:ConstantString" string="HTTP Reply"/>
       </nodes>
-      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="19,400" labelName="echo">
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_6" location="26,354" labelName="echo">
         <translation xmi:type="utility:ConstantString" string="echo_Op"/>
       </nodes>
-      <nodes xmi:type="gen_echo_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_7" location="438,337">
+      <nodes xmi:type="gen_echo_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_7" location="348,336">
         <translation xmi:type="utility:ConstantString" string="echo"/>
       </nodes>
-      <nodes xmi:type="gen_EchoServiceInputHTTPTimeoutHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_8" location="400,200">
+      <nodes xmi:type="gen_EchoServiceInputHTTPTimeoutHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_8" location="245,145">
         <translation xmi:type="utility:ConstantString" string="gen/EchoServiceInputHTTPTimeoutHandler.subflow"/>
       </nodes>
-      <nodes xmi:type="gen_EchoServiceInputFailureHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_9" location="500,200">
+      <nodes xmi:type="gen_EchoServiceInputFailureHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_9" location="484,48">
         <translation xmi:type="utility:ConstantString" string="gen/EchoServiceInputFailureHandler.subflow"/>
       </nodes>
-      <nodes xmi:type="gen_EchoServiceInputCatchHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_10" location="100,300">
+      <nodes xmi:type="gen_EchoServiceInputCatchHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_10" location="62,228">
         <translation xmi:type="utility:ConstantString" string="gen/EchoServiceInputCatchHandler.subflow"/>
       </nodes>
-      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_11" location="469,420" pattern="${Root}&#xA;${LocalEnvironment}&#xA;${ExceptionList}&#xA;${Environment}">
+      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_11" location="449,329" pattern="${Root}&#xA;${LocalEnvironment}&#xA;${ExceptionList}&#xA;${Environment}">
         <translation xmi:type="utility:ConstantString" string="Trace.IN.XML2JSON"/>
       </nodes>
-      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_12" location="711,453" pattern="${Root}&#xA;${LocalEnvironment}&#xA;${ExceptionList}&#xA;${Environment}">
+      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_12" location="685,357" pattern="${Root}&#xA;${LocalEnvironment}&#xA;${ExceptionList}&#xA;${Environment}">
         <translation xmi:type="utility:ConstantString" string="Trace.OUT.XML2JSON"/>
       </nodes>
-      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_13" location="232,405" pattern="${Root}&#xA;${LocalEnvironment}&#xA;${ExceptionList}&#xA;${Environment}">
+      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_13" location="148,353" pattern="${Root}&#xA;${LocalEnvironment}&#xA;${ExceptionList}&#xA;${Environment}">
         <translation xmi:type="utility:ConstantString" string="Trace.IN.ECHO_OP"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
