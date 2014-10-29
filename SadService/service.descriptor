@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service:services xmlns:service="http://com.ibm.etools.mft.service">
+  <service:service implementation="gen/SadService.msgflow" name="SadService" portType="SadService" wsdlFileName="SadService.wsdl">
+    <service:operations>
+      <service:operation name="timeOut" type="request-response">
+        <service:flows>
+          <service:flow location="gen/timeOut_Request_Response.subflow" type="Request_Response"/>
+        </service:flows>
+      </service:operation>
+      <service:operation name="fail1" type="request-response">
+        <service:flows>
+          <service:flow location="gen/fail1_Request_Response.subflow" type="Request_Response"/>
+        </service:flows>
+      </service:operation>
+      <service:operation name="fail2" type="request-response">
+        <service:flows>
+          <service:flow location="gen/fail2_Request_Response.subflow" type="Request_Response"/>
+        </service:flows>
+      </service:operation>
+    </service:operations>
+    <service:errors>
+      <service:flows>
+        <service:flow location="gen/SadServiceInputHTTPTimeoutHandler.subflow" type="Timeout"/>
+        <service:flow location="gen/SadServiceInputFailureHandler.subflow" type="Failure"/>
+        <service:flow location="gen/SadServiceInputCatchHandler.subflow" type="Catch"/>
+      </service:flows>
+    </service:errors>
+  </service:service>
+</service:services>
