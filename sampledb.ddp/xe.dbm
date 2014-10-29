@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<xmi:XMI xmlns:datamodelversion="http://www.ibm.com/com.ibm.datatools.core/model/data/1.3.0.0" xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OracleModel="http:///com/ibm/db/models/oracle/oracle.ecore" xmlns:SQLConstraints="http:///org/eclipse/datatools/modelbase/sql/constraints.ecore" xmlns:SQLDataTypes="http:///org/eclipse/datatools/modelbase/sql/datatypes.ecore" xmlns:SQLSchema="http:///org/eclipse/datatools/modelbase/sql/schema.ecore">
+  <OracleModel:OracleDatabase xmi:id="_A3eb8V9FEeSIlJjpK5kzSQ" name="xe" vendor="Oracle" version="11" schemas="_A3j7gF9FEeSIlJjpK5kzSQ">
+    <eAnnotations xmi:id="_A3eb8l9FEeSIlJjpK5kzSQ" source="ConnectionURI">
+      <details xmi:id="_A3eb819FEeSIlJjpK5kzSQ" key="ConnectionKey" value="sampledb"/>
+    </eAnnotations>
+  </OracleModel:OracleDatabase>
+  <SQLSchema:Schema xmi:id="_A3j7gF9FEeSIlJjpK5kzSQ" name="SAMPLE" tables="_DqL0IF9FEeSIlJjpK5kzSQ" database="_A3eb8V9FEeSIlJjpK5kzSQ"/>
+  <OracleModel:OracleTable xmi:id="_DqL0IF9FEeSIlJjpK5kzSQ" name="AUDITRECORDS" schema="_A3j7gF9FEeSIlJjpK5kzSQ">
+    <columns xmi:id="_NcSAUF9FEeSIlJjpK5kzSQ" name="ID" nullable="false" defaultValue="">
+      <containedType xsi:type="SQLDataTypes:FixedPrecisionDataType" xmi:id="_SB7VwF9FEeSIlJjpK5kzSQ" name="NUMBER" primitiveType="NUMERIC"/>
+    </columns>
+    <columns xmi:id="_TyCBcF9FEeSIlJjpK5kzSQ" name="BITSTREAM">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_VsJkwF9FEeSIlJjpK5kzSQ" name="CLOB" primitiveType="CHARACTER_LARGE_OBJECT"/>
+    </columns>
+    <columns xmi:id="_Z-CQsF9FEeSIlJjpK5kzSQ" name="CREATED_AT">
+      <containedType xsi:type="SQLDataTypes:DateDataType" xmi:id="_ephIYF9FEeSIlJjpK5kzSQ" name="DATE" primitiveType="DATE"/>
+    </columns>
+    <columns xmi:id="_oQS-8F9REeSIlJjpK5kzSQ" name="TAG">
+      <containedType xsi:type="SQLDataTypes:CharacterStringDataType" xmi:id="_rQh1wF9REeSIlJjpK5kzSQ" name="VARCHAR2" primitiveType="CHARACTER_VARYING" length="50"/>
+    </columns>
+    <constraints xsi:type="SQLConstraints:PrimaryKey" xmi:id="_QwlpsF9FEeSIlJjpK5kzSQ" name="AUDITRECORDS_PK" members="_NcSAUF9FEeSIlJjpK5kzSQ"/>
+  </OracleModel:OracleTable>
+</xmi:XMI>
