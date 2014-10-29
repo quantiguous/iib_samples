@@ -3,6 +3,7 @@
 	<name>SadService</name>
 	<comment></comment>
 	<projects>
+		<project>sampledb.ddp</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

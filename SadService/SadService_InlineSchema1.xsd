@@ -1,40 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://SadService" xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://SadService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-            <xsd:element ibmSchExtn:docRoot="true" name="timeOut">
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema targetNamespace="http://SadService" xmlns:tns="http://SadService" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="timeOut">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element name="input" nillable="true" type="xsd:string"/>
+            <xsd:element name="sleepIntervalInSeconds" nillable="true" type="xsd:int"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-            <xsd:element ibmSchExtn:docRoot="true" name="timeOutResponse">
+            <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="timeOutResponse">
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element name="output" nillable="true" type="xsd:string"/>
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-    <xsd:element ibmSchExtn:docRoot="true" name="fail1">
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="fail1">
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="input" nillable="true" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-    <xsd:element ibmSchExtn:docRoot="true" name="fail1Response">
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="fail1Response">
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="output" nillable="true" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-    <xsd:element ibmSchExtn:docRoot="true" name="fail2">
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="fail2">
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="input" nillable="true" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-    <xsd:element ibmSchExtn:docRoot="true" name="fail2Response">
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="fail2Response">
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="output" nillable="true" type="xsd:string"/>

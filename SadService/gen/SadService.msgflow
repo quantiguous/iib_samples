@@ -9,7 +9,7 @@
     <colorGraphic16 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/SadService/icons/full/obj16/SadService.gif"/>
     <colorGraphic32 xmi:type="utility:GIFFileGraphic" resourceName="platform:/plugin/SadService/icons/full/obj30/SadService.gif"/>
     <composition>
-      <nodes xmi:type="ComIbmSOAPInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="20,20" wsdlFileName="SadService.wsdl" selectedPortType="SadService" selectedBinding="SadServiceHttpBinding" selectedPort="SadServiceHttpPort" targetNamespace="http://SadService" useHTTPTransport="true" urlSelector="/SadService/SadService" maxClientWaitTime="15" allowQueryWSDL="true" extractSOAPBody="true">
+      <nodes xmi:type="ComIbmSOAPInput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="20,20" wsdlFileName="SadService.wsdl" selectedPortType="SadService" selectedBinding="SadServiceHttpBinding" selectedPort="SadServiceHttpPort" targetNamespace="http://SadService" useHTTPTransport="true" urlSelector="/SadService/SadService" maxClientWaitTime="5" allowQueryWSDL="true" extractSOAPBody="true">
         <translation xmi:type="utility:ConstantString" string="SOAP Input"/>
       </nodes>
       <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="220,150">

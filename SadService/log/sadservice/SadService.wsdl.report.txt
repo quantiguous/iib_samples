@@ -16,4 +16,3 @@ Processing doc style for operation timeOut.
 Processing doc style for operation fail1.
 Processing doc style for operation fail2.
 Populating WSDL schema platform:/resource/SadService/SadService.wsdl.
-Creating file SadService_InlineSchema1.xsd in the workspace.
