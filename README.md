@@ -25,22 +25,5 @@ To run the sample,
 * Use PostMan for the [HTTP Endpoint](http://localhost:7800/Worklight/EchoWithWorklight/echo)
 
 
-SadService
------------
 
-The SadService demostrates transaction management and failure processing in the broker.
 
-TimeOut processing:
-To demostrate the timeout processing, configure 2 datasources and create the AUDITRECORDS table (the data design project is also available). 
-The operation takes a single paramter, which is the timeoutInteval, this is the time the service takes to respond back (in an attempt to mimic a long operation). This is implemented via the ESQL SLEEP statement.
-The SOAPInput node is configured for 5 second timeout, so
-* if you invoke the opertion with a timeout less than 5 seconds, the flow completes successfully, and you'll see 3 audit records in the table.
-* if you invoke the operation witha  timeout more than 5 seconds, the SOAPInput node timesout and marks the flow to issue a rollback. At this time you will see 2 audit records in the table.
-
-There are 3 compute nodes in the flow, 2 of them are configured for un-coordinated transactions (transation mode = commit), and 1 is configured for a co-ordinated transation (transaction mode - automatic). Irrespective of the whether the msg flow commits or rollsback, 2 nodes will always commit. 1 node however will obey the message flow, and will rollback (in case of a timeout) or commit (in case of a successful completion).
-
-What is important to understand here is that a timeout does not abort the execution of the message flow prematurely, the timeout merely does the following
-* replies back to the client on the expiry of the timeout
-* fires a rollback instead of a commit as and when the message flow completes.
-
-The message flow infact tries to send a reply as well, but that fails with BIP3745E, because a reply (timeout) has already been sent. You can see this in the trace.
