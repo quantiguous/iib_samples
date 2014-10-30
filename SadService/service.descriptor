@@ -7,14 +7,14 @@
           <service:flow location="gen/timeOut_Request_Response.subflow" type="Request_Response"/>
         </service:flows>
       </service:operation>
-      <service:operation name="fail1" type="request-response">
+      <service:operation name="fail" type="request-response">
         <service:flows>
-          <service:flow location="gen/fail1_Request_Response.subflow" type="Request_Response"/>
+          <service:flow location="gen/fail_Request_Response.subflow" type="Request_Response"/>
         </service:flows>
       </service:operation>
-      <service:operation name="fail2" type="request-response">
+      <service:operation name="catch" type="request-response">
         <service:flows>
-          <service:flow location="gen/fail2_Request_Response.subflow" type="Request_Response"/>
+          <service:flow location="gen/catch_Request_Response.subflow" type="Request_Response"/>
         </service:flows>
       </service:operation>
     </service:operations>

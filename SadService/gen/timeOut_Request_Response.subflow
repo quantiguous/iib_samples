@@ -20,7 +20,7 @@
       <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="257,159" dataSource="SAMPLE" statement="esql://routine/gen#timeOut_logAuditInTransaction.Main">
         <translation xmi:type="utility:ConstantString" string="logAuditInFlowTransaction"/>
       </nodes>
-      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="525,263" dataSource="SAMPLE_AUDIT" statement="esql://routine/gen#timeOut_logAuditAndCommit2.Main" transaction="commit">
+      <nodes xmi:type="ComIbmDatabase.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="472,250" dataSource="SAMPLE_AUDIT" statement="esql://routine/gen#timeOut_logAuditAndCommit2.Main" transaction="commit">
         <translation xmi:type="utility:ConstantString" string="logAuditAndCommit2"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_1" sourceNode="InTerminal.Input" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>

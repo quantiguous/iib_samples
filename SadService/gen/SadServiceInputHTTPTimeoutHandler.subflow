@@ -11,17 +11,17 @@
       <nodes xmi:type="eflow:FCMSource" xmi:id="InTerminal.Input" location="20,20">
         <translation xmi:type="utility:TranslatableString" key="InTerminal.Input" bundleName="gen/SadServiceInputHTTPTimeoutHandler" pluginId="SadService"/>
       </nodes>
-      <nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output" location="425,22">
+      <nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output" location="680,48">
         <translation xmi:type="utility:TranslatableString" key="OutTerminal.Output" bundleName="gen/SadServiceInputHTTPTimeoutHandler" pluginId="SadService"/>
       </nodes>
-      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="161,69" dataSource="SAMPLE" computeExpression="esql://routine/gen#SadServiceInputHTTPTimeoutHandler_Compute.Main">
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="274,43" dataSource="SAMPLE" computeExpression="esql://routine/gen#SadServiceInputHTTPTimeoutHandler_Compute.Main">
         <translation xmi:type="utility:ConstantString" string="Compute"/>
       </nodes>
-      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="77,131" pattern="${Root}&#xA;${ExceptionList}&#xA;${LocalEnvironment}&#xA;${Environment}">
-        <translation xmi:type="utility:ConstantString" string="Trace.IN"/>
+      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="125,112" pattern="${Root}&#xA;${ExceptionList}&#xA;${LocalEnvironment}&#xA;${Environment}">
+        <translation xmi:type="utility:ConstantString" string="Trace.Timeout.IN"/>
       </nodes>
-      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="255,83" pattern="${Root}&#xA;${ExceptionList}&#xA;${LocalEnvironment}&#xA;${Environment}">
-        <translation xmi:type="utility:ConstantString" string="Trace.OUT"/>
+      <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="374,93" pattern="${Root}&#xA;${ExceptionList}&#xA;${LocalEnvironment}&#xA;${Environment}">
+        <translation xmi:type="utility:ConstantString" string="Trace.Timeout.OUT"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_1" sourceNode="InTerminal.Input" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>

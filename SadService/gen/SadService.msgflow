@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0"
-    xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmLabel.msgnode="ComIbmLabel.msgnode" xmlns:ComIbmRouteToLabel.msgnode="ComIbmRouteToLabel.msgnode" xmlns:ComIbmSOAPInput.msgnode="ComIbmSOAPInput.msgnode" xmlns:ComIbmSOAPReply.msgnode="ComIbmSOAPReply.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:gen_SadServiceInputCatchHandler.subflow="gen/SadServiceInputCatchHandler.subflow" xmlns:gen_SadServiceInputFailureHandler.subflow="gen/SadServiceInputFailureHandler.subflow"
-    xmlns:gen_SadServiceInputHTTPTimeoutHandler.subflow="gen/SadServiceInputHTTPTimeoutHandler.subflow" xmlns:gen_timeOut_Request_Response.subflow="gen/timeOut_Request_Response.subflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="gen/SadService.msgflow"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ComIbmLabel.msgnode="ComIbmLabel.msgnode" xmlns:ComIbmRouteToLabel.msgnode="ComIbmRouteToLabel.msgnode" xmlns:ComIbmSOAPInput.msgnode="ComIbmSOAPInput.msgnode" xmlns:ComIbmSOAPReply.msgnode="ComIbmSOAPReply.msgnode" xmlns:ComIbmThrow.msgnode="ComIbmThrow.msgnode" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:eflow="http://www.ibm.com/wbi/2005/eflow" xmlns:gen_SadServiceInputCatchHandler.subflow="gen/SadServiceInputCatchHandler.subflow" xmlns:gen_SadServiceInputFailureHandler.subflow="gen/SadServiceInputFailureHandler.subflow"
+    xmlns:gen_SadServiceInputHTTPTimeoutHandler.subflow="gen/SadServiceInputHTTPTimeoutHandler.subflow" xmlns:gen_catch_Request_Response.subflow="gen/catch_Request_Response.subflow" xmlns:gen_fail_Request_Response.subflow="gen/fail_Request_Response.subflow" xmlns:gen_timeOut_Request_Response.subflow="gen/timeOut_Request_Response.subflow" xmlns:utility="http://www.ibm.com/wbi/2005/eflow_utility" nsURI="gen/SadService.msgflow"
     nsPrefix="gen_SadService.msgflow">
   <eClassifiers xmi:type="eflow:FCMComposite" name="FCMComposite_1">
     <eSuperTypes href="http://www.ibm.com/wbi/2005/eflow#//FCMBlock"/>
@@ -15,16 +15,16 @@
       <nodes xmi:type="ComIbmRouteToLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="220,150">
         <translation xmi:type="utility:ConstantString" string="Route To Label"/>
       </nodes>
-      <nodes xmi:type="ComIbmSOAPReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="830,140">
+      <nodes xmi:type="ComIbmSOAPReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_3" location="772,292">
         <translation xmi:type="utility:ConstantString" string="SOAP Reply"/>
       </nodes>
       <nodes xmi:type="gen_SadServiceInputFailureHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_4" location="635,8">
         <translation xmi:type="utility:ConstantString" string="SadServiceInputFailureHandler"/>
       </nodes>
-      <nodes xmi:type="gen_SadServiceInputHTTPTimeoutHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_5" location="515,98">
+      <nodes xmi:type="gen_SadServiceInputHTTPTimeoutHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_5" location="490,147">
         <translation xmi:type="utility:ConstantString" string="SadServiceInputHTTPTimeoutHandler"/>
       </nodes>
-      <nodes xmi:type="gen_SadServiceInputCatchHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_6" location="455,143">
+      <nodes xmi:type="gen_SadServiceInputCatchHandler.subflow:FCMComposite_1" xmi:id="FCMComposite_1_6" location="310,77">
         <translation xmi:type="utility:ConstantString" string="SadServiceInputCatchHandler"/>
       </nodes>
       <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_7" location="220,230" labelName="timeOut">
@@ -33,15 +33,38 @@
       <nodes xmi:type="gen_timeOut_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_8" location="370,230">
         <translation xmi:type="utility:ConstantString" string="timeOut_Request_Response"/>
       </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_9" location="220,310" labelName="fail">
+        <translation xmi:type="utility:ConstantString" string="fail"/>
+      </nodes>
+      <nodes xmi:type="gen_fail_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_10" location="370,310">
+        <translation xmi:type="utility:ConstantString" string="fail_Request_Response"/>
+      </nodes>
+      <nodes xmi:type="ComIbmLabel.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_11" location="220,390" labelName="catch">
+        <translation xmi:type="utility:ConstantString" string="catch"/>
+      </nodes>
+      <nodes xmi:type="gen_catch_Request_Response.subflow:FCMComposite_1" xmi:id="FCMComposite_1_12" location="370,390">
+        <translation xmi:type="utility:ConstantString" string="catch_Request_Response"/>
+      </nodes>
+      <nodes xmi:type="ComIbmSOAPReply.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_13" location="648,81">
+        <translation xmi:type="utility:ConstantString" string="SOAP Error Reply"/>
+      </nodes>
+      <nodes xmi:type="ComIbmThrow.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_14" location="840,102" messageText="Ensure Rollback">
+        <translation xmi:type="utility:ConstantString" string="Throw"/>
+      </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_2" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_2" targetNode="FCMComposite_1_4" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.failure" targetTerminalName="InTerminal.Input"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_3" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_4" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_4" targetNode="FCMComposite_1_5" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.timeout" targetTerminalName="InTerminal.Input"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_5" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_5" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_6" targetNode="FCMComposite_1_6" sourceNode="FCMComposite_1_1" sourceTerminalName="OutTerminal.catch" targetTerminalName="InTerminal.Input"/>
-      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_7" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_6" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_8" targetNode="FCMComposite_1_8" sourceNode="FCMComposite_1_7" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_9" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_8" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_10" targetNode="FCMComposite_1_10" sourceNode="FCMComposite_1_9" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_11" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_10" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_12" targetNode="FCMComposite_1_12" sourceNode="FCMComposite_1_11" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.Input"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_13" targetNode="FCMComposite_1_3" sourceNode="FCMComposite_1_12" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_14" targetNode="FCMComposite_1_13" sourceNode="FCMComposite_1_6" sourceTerminalName="OutTerminal.Output" targetTerminalName="InTerminal.in"/>
+      <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_15" targetNode="FCMComposite_1_14" sourceNode="FCMComposite_1_13" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>
     </composition>
     <propertyOrganizer/>
     <stickyBoard/>

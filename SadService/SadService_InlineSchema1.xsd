@@ -13,28 +13,28 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="fail1">
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="fail">
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="input" nillable="true" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="fail1Response">
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="failResponse">
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="output" nillable="true" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="fail2">
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="catch">
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="input" nillable="true" type="xsd:string"/>
       </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
-    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="fail2Response">
+    <xsd:element xmlns:ibmSchExtn="http://www.ibm.com/schema/extensions" ibmSchExtn:docRoot="true" name="catchResponse">
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element name="output" nillable="true" type="xsd:string"/>

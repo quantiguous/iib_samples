@@ -1,0 +1,85 @@
+BROKER SCHEMA gen
+DECLARE soapenv NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+
+
+CREATE COMPUTE MODULE SadServiceInputHTTPTimeoutHandler_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE bitstream CHAR;		
+		DECLARE retVal BOOLEAN;
+		DECLARE id, sleepIntervalInSeconds INTEGER;
+		DECLARE originalInboundMessage REFERENCE TO InputLocalEnvironment.SOAP.Input.Timeout.OriginalInboundMessage;
+		
+		SET OutputRoot.SOAP.Body.ns:Fault = InputRoot.SOAP.Body.ns:Fault;
+		
+		CREATE LASTCHILD OF OutputRoot.SOAP.Body.ns:Fault.detail.text[2].inboundMessage  DOMAIN('XMLNSC') PARSE(originalInboundMessage);
+
+		SET sleepIntervalInSeconds = OutputRoot.SOAP.Body.ns:Fault.detail.text[<].inboundMessage.XMLNSC.*:Envelope.*:Body.*:timeOut.*:sleepIntervalInSeconds;
+		
+		-- sleep for 10 seconds, just a bit more than the SoapInput node
+		IF sleepIntervalInSeconds = 13 THEN
+			SET retVal = SLEEP(sleepIntervalInSeconds * 1000);
+		END IF;
+		
+		SET id = CAST(CAST(CURRENT_TIMESTAMP AS CHARACTER FORMAT 'MMddHHmmssSSS') AS INTEGER);
+		SET bitstream = CAST(ASBITSTREAM(originalInboundMessage) AS CHARACTER CCSID InputRoot.Properties.CodedCharSetId);
+		
+		INSERT INTO Database.AUDITRECORDS (ID, BITSTREAM, TAG, CREATED_AT)
+		VALUES (id, bitstream, 'HTTPTimeoutHandler', CURRENT_DATE);		
+
+		RETURN TRUE;
+	END;
+END MODULE;
+
+
+CREATE COMPUTE MODULE SadServiceCatchHandler_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE bitstream CHAR;
+		DECLARE retVal BOOLEAN;
+		DECLARE id, sleepIntervalInSeconds INTEGER;
+		
+		SET id = CAST(CAST(CURRENT_TIMESTAMP AS CHARACTER FORMAT 'MMddHHmmssSSS') AS INTEGER);
+		
+		INSERT INTO Database.AUDITRECORDS (ID, BITSTREAM, TAG, CREATED_AT)
+		VALUES (id, bitstream, 'HTTPCatchHandler', CURRENT_DATE);		
+
+        SET OutputRoot.SOAP.Context.Namespace.(SOAP.NamespaceDecl)xmlns:soapenv = 'http://schemas.xmlsoap.org/soap/envelope/';
+        SET OutputRoot.SOAP.Body.soapenv:Fault.faultcode = 'Client';
+        SET OutputRoot.SOAP.Body.soapenv:Fault.faultactor = 'Intentional Error';
+        SET OutputRoot.SOAP.Body.soapenv:Fault.faultstring = 'Demostration Purposes Only';		
+        SET OutputRoot.SOAP.Body.soapenv:Fault.detail.Message = 'This is a custom error to demostrate a transaction rollback with a custom message.' ;
+
+		-- add exceptions to the detail
+        DECLARE ErrorNumber INTEGER;
+        DECLARE ErrorText CHARACTER;
+        DECLARE Label CHARACTER;
+        DECLARE I INTEGER 1;
+        DECLARE start REFERENCE TO InputExceptionList.*[1];
+
+        WHILE start.Number IS NOT NULL DO
+            SET Label = start.Label;
+            SET ErrorNumber = start.Number;
+            IF ErrorNumber = 3001 THEN
+            	SET ErrorText = start.Insert.Text;
+            ELSE
+                SET ErrorText = start.Text;
+            END IF;
+            -- Don't include the "Caught exception and rethrowing message"
+            IF ErrorNumber <> 2230 THEN
+                SET OutputRoot.SOAP.Body.soapenv:Fault.detail.Exceptions.Exception[I].Number = ErrorNumber;
+                SET OutputRoot.SOAP.Body.soapenv:Fault.detail.Exceptions.Exception[I].Text = ErrorText;
+                SET I = I+1;
+            END IF;
+            -- Move start to the last child of the field to which it currently points
+            MOVE start LASTCHILD;
+        END WHILE;
+        
+        -- an alternate way to return the entire exceptionlist
+        SET OutputRoot.SOAP.Body.soapenv:Fault.detail.ExceptionList = InputExceptionList;
+		
+		RETURN TRUE;
+	END;
+	
+	
+END MODULE;

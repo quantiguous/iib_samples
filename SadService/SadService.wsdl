@@ -9,6 +9,7 @@
   </wsdl:documentation>
   
   
+  
   <wsdl:types>
     <xsd:schema targetNamespace="http://SadService">
       <xsd:include schemaLocation="SadService_InlineSchema1.xsd"/>
@@ -20,58 +21,58 @@
   <wsdl:message name="timeOutResponseMsg">
     <wsdl:part element="tns:timeOutResponse" name="timeOutResult"/>
   </wsdl:message>
-    <wsdl:message name="fail1RequestMsg">
-    <wsdl:part element="tns:fail1" name="fail1Parameters"/>
+    <wsdl:message name="failRequestMsg">
+    <wsdl:part element="tns:fail" name="failParameters"/>
   </wsdl:message>
-    <wsdl:message name="fail1ResponseMsg">
-    <wsdl:part element="tns:fail1Response" name="fail1Result"/>
+    <wsdl:message name="failResponseMsg">
+    <wsdl:part element="tns:failResponse" name="failResult"/>
   </wsdl:message>
-    <wsdl:message name="fail2RequestMsg">
-    <wsdl:part element="tns:fail2" name="fail2Parameters"/>
+    <wsdl:message name="catchRequestMsg">
+    <wsdl:part element="tns:catch" name="catchParameters"/>
   </wsdl:message>
-    <wsdl:message name="fail2ResponseMsg">
-    <wsdl:part element="tns:fail2Response" name="fail2Result"/>
+    <wsdl:message name="catchResponseMsg">
+    <wsdl:part element="tns:catchResponse" name="catchResult"/>
   </wsdl:message>
     <wsdl:portType name="SadService">
     <wsdl:operation name="timeOut">
       <wsdl:input message="tns:timeOutRequestMsg" name="timeOutRequest"/>
       <wsdl:output message="tns:timeOutResponseMsg" name="timeOutResponse"/>
     </wsdl:operation>
-        <wsdl:operation name="fail1">
-      <wsdl:input message="tns:fail1RequestMsg" name="fail1Request"/>
-      <wsdl:output message="tns:fail1ResponseMsg" name="fail1Response"/>
+        <wsdl:operation name="fail">
+      <wsdl:input message="tns:failRequestMsg" name="failRequest"/>
+      <wsdl:output message="tns:failResponseMsg" name="failResponse"/>
     </wsdl:operation>
-        <wsdl:operation name="fail2">
-      <wsdl:input message="tns:fail2RequestMsg" name="fail2Request"/>
-      <wsdl:output message="tns:fail2ResponseMsg" name="fail2Response"/>
+        <wsdl:operation name="catch">
+      <wsdl:input message="tns:catchRequestMsg" name="catchRequest"/>
+      <wsdl:output message="tns:catchResponseMsg" name="catchResponse"/>
     </wsdl:operation>
     </wsdl:portType>
   <wsdl:binding name="SadServiceHttpBinding" type="tns:SadService">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
         <wsdl:operation name="timeOut">
-      <soap:operation soapAction="http://SadService/timeOut"/>
-      <wsdl:input name="timeOutRequest">
-        <soap:body use="literal"/>
-      </wsdl:input>
+            <soap:operation soapAction="http://SadService/timeOut"/>
+            <wsdl:input name="timeOutRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
       <wsdl:output name="timeOutResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+    </wsdl:operation>
+        <wsdl:operation name="fail">
+      <soap:operation soapAction="http://SadService/fail"/>
+      <wsdl:input name="failRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="failResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-        <wsdl:operation name="fail1">
-      <soap:operation soapAction="http://SadService/fail1"/>
-      <wsdl:input name="fail1Request">
+        <wsdl:operation name="catch">
+      <soap:operation soapAction="http://SadService/catch"/>
+      <wsdl:input name="catchRequest">
         <soap:body use="literal"/>
       </wsdl:input>
-      <wsdl:output name="fail1Response">
-        <soap:body use="literal"/>
-      </wsdl:output>
-    </wsdl:operation>
-        <wsdl:operation name="fail2">
-      <soap:operation soapAction="http://SadService/fail2"/>
-      <wsdl:input name="fail2Request">
-        <soap:body use="literal"/>
-      </wsdl:input>
-      <wsdl:output name="fail2Response">
+      <wsdl:output name="catchResponse">
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>

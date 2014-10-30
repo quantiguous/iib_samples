@@ -8,11 +8,11 @@ Creating wsdl schema document for platform:/resource/SadService/SadService.wsdl.
 Parsing wsdl binding {http://SadService}SadServiceHttpBinding.
 Parsing wsdl binding input timeOut.
 Parsing wsdl binding output timeOut.
-Parsing wsdl binding input fail1.
-Parsing wsdl binding output fail1.
-Parsing wsdl binding input fail2.
-Parsing wsdl binding output fail2.
+Parsing wsdl binding input fail.
+Parsing wsdl binding output fail.
+Parsing wsdl binding input catch.
+Parsing wsdl binding output catch.
 Processing doc style for operation timeOut.
-Processing doc style for operation fail1.
-Processing doc style for operation fail2.
+Processing doc style for operation fail.
+Processing doc style for operation catch.
 Populating WSDL schema platform:/resource/SadService/SadService.wsdl.
