@@ -14,7 +14,7 @@
       <nodes xmi:type="eflow:FCMSink" xmi:id="OutTerminal.Output" location="425,22">
         <translation xmi:type="utility:TranslatableString" key="OutTerminal.Output" bundleName="gen/SadServiceInputHTTPTimeoutHandler" pluginId="SadService"/>
       </nodes>
-      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="161,69" computeExpression="esql://routine/gen#SadServiceInputHTTPTimeoutHandler_Compute.Main">
+      <nodes xmi:type="ComIbmCompute.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="161,69" dataSource="SAMPLE" computeExpression="esql://routine/gen#SadServiceInputHTTPTimeoutHandler_Compute.Main">
         <translation xmi:type="utility:ConstantString" string="Compute"/>
       </nodes>
       <nodes xmi:type="ComIbmTrace.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_1" location="77,131" pattern="${Root}&#xA;${ExceptionList}&#xA;${LocalEnvironment}&#xA;${Environment}">
