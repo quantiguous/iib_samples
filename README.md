@@ -23,3 +23,7 @@ The last point is especially tricky as by default, SOAPInput uses the embededded
 To run the sample, 
 * Use SoapUI Toolkit for the [SOAP Endpoint](http://localhost:7800/EchoService/EchoService)
 * Use PostMan for the [HTTP Endpoint](http://localhost:7800/Worklight/EchoWithWorklight/echo)
+
+
+
+
