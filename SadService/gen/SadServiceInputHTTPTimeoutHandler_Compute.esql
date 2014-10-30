@@ -1,0 +1,26 @@
+BROKER SCHEMA gen
+
+
+CREATE COMPUTE MODULE SadServiceInputHTTPTimeoutHandler_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE retVal BOOLEAN;
+		DECLARE sleepIntervalInSeconds INTEGER;
+		DECLARE inboundMessage REFERENCE TO OutputRoot.XMLNSC;
+		
+		SET OutputRoot.SOAP.Body.ns:Fault = InputRoot.SOAP.Body.ns:Fault;
+		
+		CREATE LASTCHILD OF OutputRoot.SOAP.Body.ns:Fault.detail.text[2].inboundMessage  DOMAIN('XMLNSC') PARSE(InputLocalEnvironment.SOAP.Input.Timeout.OriginalInboundMessage);
+
+		SET sleepIntervalInSeconds = OutputRoot.SOAP.Body.ns:Fault.detail.text[<].inboundMessage.XMLNSC.*:Envelope.*:Body.*:timeOut.*:sleepIntervalInSeconds;
+		
+		-- sleep for 10 seconds, just a bit more than the SoapInput node
+		IF sleepIntervalInSeconds = 13 THEN
+			SET retVal = SLEEP(sleepIntervalInSeconds * 1000);
+		END IF;
+
+		RETURN TRUE;
+	END;
+
+
+END MODULE;

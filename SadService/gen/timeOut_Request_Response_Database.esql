@@ -1,0 +1,63 @@
+BROKER SCHEMA gen
+DECLARE ns6 NAMESPACE 'http://SadService';
+DECLARE ns NAMESPACE 'http://schemas.xmlsoap.org/soap/envelope/';
+
+
+CREATE DATABASE MODULE timeOut_logAuditAndCommit1
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE bitstream CHAR;
+		DECLARE id, sleepIntervalInSeconds  INT;
+		DECLARE retVal BOOLEAN;
+		
+		SET id = CAST(CAST(CURRENT_TIMESTAMP AS CHARACTER FORMAT 'MMddHHmmssSSS') AS INTEGER);
+		SET bitstream = CAST(ASBITSTREAM(Root.XMLNSC.ns:Body) AS CHARACTER CCSID Root.Properties.CodedCharSetId);
+		
+		INSERT INTO Database.AUDITRECORDS (ID, BITSTREAM, TAG, CREATED_AT)
+		VALUES (id, bitstream, 'logAuditAndCommit1', CURRENT_DATE);
+		
+		SET sleepIntervalInSeconds = Root.XMLNSC.ns6:timeOut.sleepIntervalInSeconds;
+		-- sleep for 10 seconds, just a bit more than the SoapInput node
+		IF sleepIntervalInSeconds > 0 THEN
+			SET retVal = SLEEP(sleepIntervalInSeconds * 1000);
+		END IF;
+		RETURN TRUE;
+	END;
+
+END MODULE;
+
+
+
+CREATE DATABASE MODULE timeOut_logAuditAndCommit2
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE bitstream CHAR;
+		DECLARE id  INT;
+		DECLARE retVal BOOLEAN;
+		
+		SET id = CAST(CAST(CURRENT_TIMESTAMP AS CHARACTER FORMAT 'MMddHHmmssSSS') AS INTEGER);
+		SET bitstream = CAST(ASBITSTREAM(Root.XMLNSC.ns:Body) AS CHARACTER CCSID Root.Properties.CodedCharSetId);
+		
+		INSERT INTO Database.AUDITRECORDS (ID, BITSTREAM, TAG, CREATED_AT)
+		VALUES (id, bitstream, 'logAuditAndCommit2', CURRENT_DATE);
+		
+		RETURN TRUE;
+	END;
+END MODULE;
+
+CREATE DATABASE MODULE timeOut_logAuditInTransaction
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		DECLARE bitstream CHAR;
+		DECLARE id  INT;
+		DECLARE retVal BOOLEAN;
+		
+		SET id = CAST(CAST(CURRENT_TIMESTAMP AS CHARACTER FORMAT 'MMddHHmmssSSS') AS INTEGER);
+		SET bitstream = CAST(ASBITSTREAM(Root.XMLNSC.ns:Body) AS CHARACTER CCSID Root.Properties.CodedCharSetId);
+		
+		INSERT INTO Database.AUDITRECORDS (ID, BITSTREAM, TAG, CREATED_AT)
+		VALUES (id, bitstream, 'logAuditInTransaction', CURRENT_DATE);
+		
+		RETURN TRUE;
+	END;
+END MODULE;
