@@ -1,0 +1,22 @@
+CREATE COMPUTE MODULE setHTTPBasicAuth
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot.Properties.IdentitySourceType='usernameAndPassword';
+		SET OutputRoot.Properties.IdentitySourceToken = 'qg';
+		SET OutputRoot.Properties.IdentitySourcePassword = 'password';
+		RETURN TRUE;
+	END;
+
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;
+
+CREATE COMPUTE MODULE passThru
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		SET OutputRoot = InputRoot;
+		RETURN TRUE;
+	END;
+END MODULE;
