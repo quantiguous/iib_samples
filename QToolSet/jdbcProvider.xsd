@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.quantiguous.com/tools" xmlns:tns="http://www.quantiguous.com/tools">
+    <xsd:element name="JdbcProviders" type="tns:JdbcProvidersType"></xsd:element>
+
+    <xsd:complexType name="JdbcProviderType">
+    	<xsd:all>
+    		<xsd:element name="name" type="xsd:string"></xsd:element>
+    		<xsd:element name="connectionUrlFormat" type="xsd:anyURI" />
+    		<xsd:element name="databaseName" type="xsd:string" />
+    		<xsd:element name="databaseSchemaNames" type="xsd:string" />
+    		<xsd:element name="databaseType" type="xsd:string" />
+    		<xsd:element name="databaseVersion" type="xsd:string" />
+    		<xsd:element name="description" type="xsd:string" />
+    		<xsd:element name="environmentParms" type="xsd:string" />
+    		<xsd:element name="jarsURL" type="xsd:string" />
+    		<xsd:element name="maxConnectionPoolSize" type="xsd:string" />
+    		<xsd:element name="portNumber" type="xsd:string" />
+    		<xsd:element name="securityIdentity" type="xsd:string" />
+    		<xsd:element name="serverName" type="xsd:string" />
+    		<xsd:element name="testResults"
+    			type="tns:testResultsType">
+    		</xsd:element>
+
+    		<xsd:element name="metaData" type="tns:DatabaseMetaDataType"></xsd:element>
+    	</xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="JdbcProvidersType">
+    	<xsd:sequence>
+    		<xsd:element name="JdbcProvider" type="tns:JdbcProviderType" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="testResultType">
+    	<xsd:all>
+    		<xsd:element name="testName" type="xsd:string"></xsd:element>
+    		<xsd:element name="testSuccessful" type="xsd:boolean"></xsd:element>
+    		<xsd:element name="testResult" type="xsd:string"></xsd:element>
+    		<xsd:element name="testException" type="xsd:string"></xsd:element>
+    	</xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="testResultsType">
+    	<xsd:sequence>
+    		<xsd:element name="testResult" type="tns:testResultType" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="DatabaseMetaDataType">
+    	<xsd:sequence>
+    		<xsd:element name="productName" type="xsd:string"></xsd:element>
+    		<xsd:element name="productVersion" type="xsd:string"></xsd:element>
+    		<xsd:element name="databaseMajorVersion" type="xsd:int">
+    		</xsd:element>
+    		<xsd:element name="databaseMinorVersion" type="xsd:int">
+    		</xsd:element>
+    		<xsd:element name="driverName" type="xsd:string"></xsd:element>
+    		<xsd:element name="driverVersion" type="xsd:string"></xsd:element>
+    		<xsd:element name="jdbcMajorVersion" type="xsd:int"></xsd:element>
+    		<xsd:element name="jdbcMinorVersion" type="xsd:int"></xsd:element>
+    		<xsd:element name="databaseURL" type="xsd:anyURI"></xsd:element>
+    		<xsd:element name="userName" type="xsd:string"></xsd:element>
+    		<xsd:element name="schema" type="xsd:string"></xsd:element>
+    		<xsd:element name="schemas"
+    			type="tns:databaseSchemasType">
+    		</xsd:element>
+    		<xsd:element name="catalogs"
+    			type="tns:databaseCatalogsType">
+    		</xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="databaseSchemasType">
+    	<xsd:sequence>
+    		<xsd:element name="schema" type="xsd:string" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="databaseCatalogsType">
+    	<xsd:sequence>
+    		<xsd:element name="catalog" type="xsd:string" maxOccurs="unbounded" minOccurs="0"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
