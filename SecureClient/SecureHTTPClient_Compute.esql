@@ -1,3 +1,19 @@
+CREATE FILTER MODULE withHTTPBasicAuth
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		IF Root.Properties.IdentitySourceToken <> 'qg' THEN
+			RETURN FALSE;
+		END IF;
+		IF Root.Properties.IdentitySourcePassword <> 'password' THEN
+			RETURN FALSE;
+		END IF;
+		
+		RETURN TRUE;
+	END;
+END MODULE;
+
+
+
 CREATE COMPUTE MODULE setHTTPBasicAuth
 	CREATE FUNCTION Main() RETURNS BOOLEAN
 	BEGIN
@@ -5,11 +21,6 @@ CREATE COMPUTE MODULE setHTTPBasicAuth
 		SET OutputRoot.Properties.IdentitySourceToken = 'qg';
 		SET OutputRoot.Properties.IdentitySourcePassword = 'password';
 		RETURN TRUE;
-	END;
-
-
-	CREATE PROCEDURE CopyEntireMessage() BEGIN
-		SET OutputRoot = InputRoot;
 	END;
 END MODULE;
 
