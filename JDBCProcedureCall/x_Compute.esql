@@ -1,0 +1,16 @@
+
+
+CREATE COMPUTE MODULE x_Compute
+	CREATE FUNCTION Main() RETURNS BOOLEAN
+	BEGIN
+		
+        SET OutputLocalEnvironment.Destination.Email.Attachment.ContentName = 'encrypted.pdf';
+        SET OutputLocalEnvironment.Destination.Email.Attachment.ContentType = 'application/pdf'; -- 'text/plain';
+        SET OutputLocalEnvironment.Destination.Email.Attachment.ContentEncoding = 'base64'; -- '7bit' for text
+		RETURN TRUE;
+	END;
+
+	CREATE PROCEDURE CopyEntireMessage() BEGIN
+		SET OutputRoot = InputRoot;
+	END;
+END MODULE;
