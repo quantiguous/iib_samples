@@ -179,7 +179,7 @@ public class JDBCProviderTest extends MbJavaComputeNode {
 			
 			metaData.setDatabaseMajorVersion(dbMetaData.getDatabaseMajorVersion());
 			metaData.setDatabaseMinorVersion(dbMetaData.getDatabaseMinorVersion());
-			metaData.setDatabaseURL(dbMetaData.getURL());
+			// sets the password, hence removed . metaData.setDatabaseURL(dbMetaData.getURL());
 			metaData.setDriverName(dbMetaData.getDriverName());
 			metaData.setDriverVersion(dbMetaData.getDriverVersion());
 			metaData.setJdbcMajorVersion(dbMetaData.getJDBCMajorVersion());
